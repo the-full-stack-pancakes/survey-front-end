@@ -1,1 +1,44 @@
 @import '~bootstrap/scss/bootstrap';
+
+$transparent: rgba(0, 0, 0, .5);
+
+.modal-title {
+  font-size: 2rem;
+}
+
+.page-mask {
+  background: $transparent;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.side-bar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: $transparent;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 1rem;
+}
+
+.toggle-side-bar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.nav-btn {
+  margin: 1.5rem;
+}
+
+.close-nav {
+  color: red;
+  margin: 1.5rem;
+}
