@@ -20,7 +20,7 @@ const signInSuccess = function (data) {
 
   $('#sign-in-modal').hide()
   $('.page-mask').hide()
-  // $('.user-message').text(`Welcome ${store.user.email}`)
+  $('.user-message').text(`Welcome ${store.user.email}`)
 }
 
 const signInFailure = function (data) {
@@ -32,12 +32,12 @@ const changePasswordSuccess = function (data) {
   $('form').trigger('reset')
   $('#change-password-modal').hide()
   $('.side-bar').width('0%')
-  // $('.user-message').text('Password changed!')
+  $('.user-message').text('Password changed!')
 }
 
 const changePasswordFailure = function (data) {
   $('form').trigger('reset')
-  // $('.user-message').text('Please try again!')
+  $('.user-message').text('Please try again!')
 }
 
 const signOutSuccess = function (data) {
@@ -51,7 +51,7 @@ const signOutSuccess = function (data) {
 
 const signOutFailure = function (data) {
   $('form').trigger('reset')
-  // $('.user-message').text('Please try again!')
+  $('.user-message').text('Please try again!')
 }
 
 module.exports = {
