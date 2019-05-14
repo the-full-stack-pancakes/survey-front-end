@@ -1,11 +1,15 @@
-const config = require('../config')
+const config = require('../config.js')
 const store = require('../store')
 
-// Same as updateGame
-const createAnswer = function (data) {
-  // console.log(data)
+const getYourAnswers = () => {
   return $.ajax({
-    url: config.apiUrl + '/answers/',
+    url: config.apiUrl + `/answers`,
+    method: 'GET'
+  })
+}
+const createAnswer = (data) => {
+  return $.ajax({
+    url: config.apiUrl + `/answers`,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -13,29 +17,10 @@ const createAnswer = function (data) {
     data
   })
 }
-
-const getAnswers = function () {
-  return $.ajax({
-    url: config.apiUrl + '/answers',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const deleteAnswer = function (id) {
-  return $.ajax({
-    url: config.apiUrl + `/answers/${id}`,
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const updateAnswer = function (data, id) {
   return $.ajax({
+    // this is going to need a way to get an id of an answer so we can update
+    // a single id.
     url: config.apiUrl + `/answers/${id}`,
     method: 'PATCH',
     headers: {
@@ -44,10 +29,21 @@ const updateAnswer = function (data, id) {
     data
   })
 }
+const deleteAnswer = function (id) {
+  return $.ajax({
+    // this is going to need a way to get an id of an answer so we can update
+    // a single id.
+    url: config.apiUrl + `/answers/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
+  getYourAnswers,
   createAnswer,
-  getAnswers,
-  deleteAnswer,
-  updateAnswer
+  updateAnswer,
+  deleteAnswer
 }
