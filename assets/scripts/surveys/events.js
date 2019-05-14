@@ -6,7 +6,8 @@ const store = require('../store')
 
 const onCreateSurvey = function (event) {
   event.preventDefault()
-  // const data = getFormFields(event.target)
+  const data = getFormFields(event.target)
+  console.log(data)
   //
   // api.createSurvey(data)
   //   .then(ui.createSurveySuccess)
@@ -28,6 +29,11 @@ const onGetSurveys = function (event) {
   // .catch(ui.failure)
 }
 
+const onGetMySurveys = function (event) {
+  event.preventDefault()
+
+}
+
 const onDeleteSurvey = (event) => {
   event.preventDefault()
 
@@ -43,7 +49,10 @@ const onClearSurveys = (event) => {
 }
 
 const addHandlers = function () {
-  // $('#create-survey').on('submit', onCreateSurvey)
+  $('#see-all-surveys').on('submit', onGetSurveys)
+  $('#survey-submit').on('submit', onCreateSurvey)
+  $('#create-survey').on('click', onCreateSurvey)
+
   // $('#getSurveysButton').on('click', onGetSurveys)
   // $('#clearSurveysButton').on('click', onClearSurveys)
   // $('#content').on('click', '.delete', onDeleteSurvey)
