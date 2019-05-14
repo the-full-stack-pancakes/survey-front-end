@@ -25,6 +25,8 @@ const signInFailure = function (data) {
 
 const changePasswordSuccess = function (data) {
   $('form').trigger('reset')
+  $('#change-password-modal').hide()
+  $('.side-bar').width('0%')
 }
 
 const changePasswordFailure = function (data) {
@@ -34,7 +36,7 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function (data) {
   $('form').trigger('reset')
 
-store.user = null
+  store.user = null
 }
 
 const signOutFailure = function (data) {
