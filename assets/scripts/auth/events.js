@@ -54,6 +54,12 @@ const changePasswordToggle = () => {
 const closeChangePassword = () => {
   $('#change-password-modal').hide()
 }
+const navBarToggle = () => {
+  $('.side-bar').width('17.5%')
+}
+const closeNav = () => {
+  $('.side-bar').width('0%')
+}
 
 const authHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -67,6 +73,8 @@ const authHandlers = () => {
   $('#change-password-modal').hide()
   $('#change-password-toggle').on('click', changePasswordToggle)
   $('.close-change-password').on('click', closeChangePassword)
+  $('.toggle-side-bar').on('click', navBarToggle)
+  $('.close-nav').on('click', closeNav)
   //
   // $('#sign-up').on('submit', onSignUp)
   // $('#sign-in').on('submit', onSignIn)
