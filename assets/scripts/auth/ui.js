@@ -13,6 +13,10 @@ const signUpFailure = function (data) {
 const signInSuccess = function (data) {
   $('form').trigger('reset')
   store.user = data.user
+
+  $('#sign-in-modal').hide()
+  $('.page-mask').hide()
+  // $('.user-message').text(`Welcome ${store.user.email}`)
 }
 
 const signInFailure = function (data) {

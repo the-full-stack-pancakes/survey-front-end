@@ -56,6 +56,10 @@ const closeChangePassword = () => {
 }
 
 const authHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
+  $('#change-password').on('submit', onChangePassword)
   $('.page-mask').show()
   $('#sign-in-modal').show()
   $('#sign-up-toggle').on('click', signUpToggle)
