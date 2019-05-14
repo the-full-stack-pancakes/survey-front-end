@@ -1,5 +1,5 @@
 const getFormFields =
-require('./../../../lib/get-form-fields.js')
+require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
