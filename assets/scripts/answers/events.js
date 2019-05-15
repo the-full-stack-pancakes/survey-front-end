@@ -31,7 +31,7 @@ const onDeleteAnswer = () => {
 const answerHandlers = () => {
   $('#answer-form').on('submit', onCreateAnswer)
   $('#get-answers').on('click', onGetYourAnswers)
-  $('#update-form').on('submit', onUpdateAnswers)
+  $('#update-answer').on('submit', onUpdateAnswers)
   $('#destroy-answer').on('click', onDeleteAnswer)
 }
 module.exports = {
