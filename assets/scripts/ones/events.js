@@ -16,10 +16,7 @@ const onCreateOne = () => {
     .catch(ui.failure)
 }
 // update
-const onUpdateOne = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  // will need to get data from a form here and an id
+const onUpdateOne = (data) => {
   api.updateOne(data)
     .then(ui.onUpdateOneSuccess)
     .catch(ui.failure)
@@ -47,5 +44,6 @@ const oneHandlers = () => {
 }
 
 module.exports = {
-  oneHandlers
+  oneHandlers,
+  onUpdateOne
 }

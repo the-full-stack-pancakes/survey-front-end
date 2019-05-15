@@ -15,18 +15,15 @@ const createTwo = (data) => {
     }
   })
 }
-const updateTwo = (data, id) => {
+const updateTwo = (data) => {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
-    url: config.apiUrl + `/twos/${id}`,
+    url: config.apiUrl + `/twos/${store.updateTwo}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
-      one: {
-        // need to get data from a form
+      two: {
         title: data
       }
     }

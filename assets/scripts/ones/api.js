@@ -15,18 +15,16 @@ const createOne = (data) => {
     }
   })
 }
-const updateOne = (data, id) => {
+const updateOne = (data) => {
+  console.log(data)
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
-    url: config.apiUrl + `/ones/${id}`,
+    url: config.apiUrl + `/ones/${store.updateOne}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       one: {
-        // need to get data from a form
         title: data
       }
     }

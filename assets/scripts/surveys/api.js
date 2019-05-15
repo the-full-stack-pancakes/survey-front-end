@@ -52,19 +52,17 @@ const deleteSurvey = function (id) {
   })
 }
 
-const updateSurvey = function (data, id) {
+const updateSurvey = function (data) {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
-    url: config.apiUrl + `/surveys/${id}`,
+    url: config.apiUrl + `/surveys/${store.updateSurvey}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       survey: {
-        title: data.survey.title,
-        description: data.survey.description
+        title: data
+        // description: data.survey.description
         // need to find a way to update when you want a new question.
         // might have to tie in the update on question api somehow
         // questions: store.question._id
