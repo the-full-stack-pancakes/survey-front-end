@@ -30,8 +30,8 @@ const onDeleteSurvey = (id) => {
 
 const surveyHandlers = function () {
   $('#get-surveys').on('click', onGetYourSurveys)
-  $('#update-survey').on('submit', onUpdateSurvey)
-  $('#delete-survey').on('click', onDeleteSurvey)
+  $("#my-survey-content").on("submit", ".update-survey", onUpdateSurvey)
+  $("#my-survey-content").on("click", ".btn-dark", onUpdateSurvey)
 }
 
 module.exports = {

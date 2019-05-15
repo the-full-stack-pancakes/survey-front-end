@@ -2,7 +2,7 @@
 {{log survey}}
 <div class="card">
 
-  <div class="container" data-id="{{survey._id}}">
+  <div class="container" >
     <section>
       <h2>{{survey.title}}</h2>
       <br></br>
@@ -13,13 +13,13 @@
         {{survey.two.title}}
       </p>
     </section>
-    <button type="button" id="update-survey" class="btn btn-primary" data-id="{{survey._id}}" data-toggle="modal" data-target=".modal[data-id='{{survey.id}}']">Update</button>
+    <button type="button" class="btn btn-primary" data-id="{{survey._id}}" data-toggle="modal" data-target=".modal[data-id='{{survey._id}}']">Update</button>
     <button type="button" class="btn btn-dark" data-id="{{survey._id}}">Delete</button>
   </div>
 
   <div>
     <!-- MODAL FOR UPDATE -->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-id="{{survey.id}}" aria-hidden="true">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-id="{{survey._id}}" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
@@ -31,11 +31,11 @@
               </button>
             </div>
 
-            <form class="update-survey" data-id="{{survey.id}}">
+            <form class="update-survey" data-id="{{survey._id}}">
               <input type="text" class="form-control validate survey-update" name="survey[title]" placeholder="Title: {{survey.title}}" required>
               <input type="text" class="form-control validate survey-update" name="survey[description]" placeholder="Description: {{survey.description}}" required>
-              <input type="text" class="form-control validate survey-update" name="survey[answer]" placeholder="Answer 1: {{survey.answer}}" required>
-              <input type="text" class="form-control validate survey-update" name="survey[answer2]" placeholder="Answer 2: {{survey.answer2}}" required>
+              <input type="text" class="form-control validate survey-update" name="survey[answer]" placeholder="Answer 1: {{survey.one.title}}" required>
+              <input type="text" class="form-control validate survey-update" name="survey[answer2]" placeholder="Answer 2: {{survey.two.title}}" required>
               <button class="modal-footer btn btn-warning update" type="submit">Confirm</button>
             </form>
 
