@@ -3,8 +3,6 @@
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 const authEvents = require('./auth/events.js')
-const answerEvents = require('./answers/events.js')
-const questionEvents = require('./questions/events.js')
 const surveyEvents = require('./surveys/events.js')
 const oneEvents = require('./ones/events.js')
 const twoEvents = require('./twos/events.js')
@@ -13,8 +11,6 @@ const twoEvents = require('./twos/events.js')
 
 $(() => {
   authEvents.authHandlers()
-  answerEvents.answerHandlers()
-  questionEvents.questionHandler()
   surveyEvents.surveyHandlers()
   oneEvents.oneHandlers()
   twoEvents.twoHandlers()
