@@ -22,7 +22,7 @@ const onGetYourSurveysSuccess = (data) => {
   console.log(data)
   $('#display-my-surveys-message').text('Your serveys are displayed below:')
   const getSurveysHtml = getSurveysTemplate({ surveys: data.surveys })
-  $('.content').html(getSurveysHtml)
+  $('#my-survey-content').html(getSurveysHtml)
 }
 const onDeleteSurveySuccess = (response) => {
   console.log(response)
