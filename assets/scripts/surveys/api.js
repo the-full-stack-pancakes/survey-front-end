@@ -30,6 +30,16 @@ const getYourSurveys = function () {
   })
 }
 
+const getAllSurveys = function () {
+  return $.ajax({
+    url: config.apiUrl + '/surveys',
+    method: 'GET',
+    headers: {
+      // Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteSurvey = function (id) {
   return $.ajax({
     // this is going to need a way to get an id of an answer so we can delete
@@ -65,5 +75,6 @@ module.exports = {
   createSurvey,
   getYourSurveys,
   deleteSurvey,
-  updateSurvey
+  updateSurvey,
+  getAllSurveys
 }

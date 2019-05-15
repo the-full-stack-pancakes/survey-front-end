@@ -32,6 +32,18 @@ const onGetYourSurveys = () => {
     .catch(ui.failure)
 }
 const onUpdateSurvey = (data) => {
+
+const onGetAllSurveys = () => {
+  api.getAllSurveys()
+    .then(ui.onGetAllSurveysSuccess)
+    .catch(ui.failure)
+}
+
+const onUpdateSurvey = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  // needs to get an id somehow
   api.updateSurvey(data)
     .then(ui.onUpdateSurveySuccess)
     .catch(ui.failure)
@@ -46,6 +58,10 @@ const onDeleteSurvey = (id) => {
 const surveyHandlers = function () {
   $('#get-surveys').on('click', onGetYourSurveys)
   $("#my-survey-content").on("submit", ".update-survey", update)
+
+  $('#index-surveys').on('click', onGetAllSurveys)
+  $("#my-survey-content").on("submit", ".update-survey", onUpdateSurvey)
+
   $("#my-survey-content").on("click", ".btn-dark", onUpdateSurvey)
 }
 
