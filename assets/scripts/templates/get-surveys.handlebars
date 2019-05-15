@@ -1,15 +1,16 @@
 {{#each surveys as |survey|}}
 {{log survey}}
-<div class="container" data-id="{{survey.id}}">
+<div class="container" data-id="{{survey._id}}">
   <section>
 <h2>{{survey.title}}</h2>
 <br></br>
 <h5>{{survey.description}}</h5>
 <p>
   {{survey.question}}
-  {{survey.answer}}
+  {{survey.one.title}}
+  {{survey.two.title}}
 </p>
   </section>
-  <button id="delete-survey" class="btn btn-dark" data-id="{{survey.id}}">Delete</button>
+  <button id="delete-survey" class="btn btn-dark" data-id="{{survey._id}}">Delete</button>
 </div>
 {{/each}}
