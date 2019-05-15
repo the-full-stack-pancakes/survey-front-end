@@ -30,6 +30,13 @@ const onDeleteSurveySuccess = (response) => {
   $('#').text('You have successfully deleted your survey!')
 }
 
+const onGetAllSurveysSuccess = (data) => {
+  console.log(data)
+  $('#display-see-all-surveys-message').text('See all serveys displayed below:')
+  const getSurveysHtml = getSurveysTemplate({ surveys: data.surveys })
+  $('#see-all-survey-content').html(getSurveysHtml)
+}
+
 const clearSurveys = () => {
   $('.content').empty()
 }
@@ -40,5 +47,6 @@ module.exports = {
   clearSurveys,
   failure,
   onUpdateSurveySuccess,
-  onDeleteSurveySuccess
+  onDeleteSurveySuccess,
+  onGetAllSurveysSuccess
 }
