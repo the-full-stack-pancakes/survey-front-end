@@ -3,20 +3,57 @@
 $transparent: rgba(0, 0, 0, .5);
 
 body {
+  height: 100vh;
   text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("public/road-choice.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.card-body {
-  margin: 2rem auto;
-  max-width: 800px;
+h1, .user-message, p {
+  color: #fff;
+  font-weight: bold;
+}
+
+h1 {
+  margin-top: 1rem;
+}
+
+.user-message {
+  margin-bottom: 1rem;
+}
+
+.fa-bars {
+  color: #fff;
 }
 
 .btn {
   font-weight: bold;
 }
 
+.btn-primary {
+  background-color: #2a8214;
+  border-color: #2faf0f
+}
+
+.btn-primary:hover {
+  background-color: #2faf0f;
+  border-color: #2a8214;
+  color: #072101;
+}
+
+.modal-header {
+  margin: 0 auto;
+}
+
 .modal-title {
   font-size: 2rem;
+}
+
+.card-body {
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
 .page-mask {
