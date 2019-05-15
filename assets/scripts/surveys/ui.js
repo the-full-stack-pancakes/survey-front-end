@@ -1,38 +1,33 @@
 const store = require('../store')
 // const getSurveysTemplate = require('../templates/get-surveys.handlebars')
 
-const createSurveySuccess = function (data) {
-
+const failure = () => {
+  console.log('you fail bro!')
 }
-
-const createSurveyFailure = function (data) {
-
+const oncreateSurveySuccess = function (response) {
+  store.survey = response.survey
+  console.log(response)
+  console.log(store.survey)
 }
-
-const updateSurveySuccess = (data) => {
-
+const onUpdateSurveySuccess = (response) => {
+  console.log(response)
 }
-
-const getSurveysSuccess = (data) => {
-
+const onGetYourSurveysSuccess = (response) => {
+  console.log(response)
 // const getSurveysHtml = getSurveysTemplate({ surveys: data.surveys })
-
 }
-
+const onDeleteSurveySuccess = (response) => {
+  console.log(response)
+}
 const clearSurveys = () => {
   $('.content').empty()
 }
 
-const failure = (error) => {
-  console.error(error)
-  // $('#message').text('error')
-}
-
 module.exports = {
-  createSurveySuccess,
-  createSurveyFailure,
-  getSurveysSuccess,
+  oncreateSurveySuccess,
+  onGetYourSurveysSuccess,
   clearSurveys,
   failure,
-  updateSurveySuccess
+  onUpdateSurveySuccess,
+  onDeleteSurveySuccess
 }
