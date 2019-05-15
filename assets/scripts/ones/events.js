@@ -2,16 +2,18 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store')
+const two = require('../twos/events.js')
 
 // create
-const onCreateOne = (event) => {
+const create = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   store.survey = data.survey
-  console.log('===============================')
-  console.log(data.survey.answer)
-  console.log('===============================')
-  api.createOne(data.survey.answer)
+  onCreateOne()
+  two.onCreateTwo()
+}
+const onCreateOne = () => {
+  api.createOne(store.survey.answer)
     .then(ui.onCreateOneSuccess)
     .catch(ui.failure)
 }
@@ -40,7 +42,7 @@ const onVotedOne = (event) => {
 }
 
 const oneHandlers = () => {
-  $('#create-survey').on('submit', onCreateOne)
+  $('#create-survey').on('submit', create)
   // need a button for onUpdateOne
   // need a button for onDeleteOne
   // need a button for votedOne

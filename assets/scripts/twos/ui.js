@@ -1,16 +1,16 @@
 const store = require('../store.js')
 
-const onCreateOneSuccess = (response) => {
-  store.one = response.one
-  console.log(store.one)
+const onCreateTwoSuccess = (response) => {
+  store.two = response.two
+  console.log(response)
 }
 const failure = (response) => {
   console.log(response)
 }
-const onUpdateOneSuccess = (response) => {
+const onUpdateTwoSuccess = (response) => {
   console.log(response)
 }
-const onDeleteOneSuccess = (response) => {
+const onDeleteTwoSuccess = (response) => {
   console.log(response)
 }
 const onVotedSuccess = (response) => {
@@ -18,9 +18,9 @@ const onVotedSuccess = (response) => {
 }
 
 module.exports = {
-  onCreateOneSuccess,
+  onCreateTwoSuccess,
   failure,
-  onUpdateOneSuccess,
-  onDeleteOneSuccess,
+  onUpdateTwoSuccess,
+  onDeleteTwoSuccess,
   onVotedSuccess
 }

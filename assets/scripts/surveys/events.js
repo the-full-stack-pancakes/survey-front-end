@@ -32,7 +32,7 @@ const onDeleteSurvey = (id) => {
 }
 
 const surveyHandlers = function () {
-  $('#create-survey').on('submit', onCreateSurvey)
+  //$('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetYourSurveys)
   $('#update-survey').on('submit', onUpdateSurvey)
   $('#delete-survey').on('click', onDeleteSurvey)
