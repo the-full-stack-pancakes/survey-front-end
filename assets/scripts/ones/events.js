@@ -2,7 +2,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const store = require('../store')
-const two = require('../twos/events.js')
 
 // create
 const create = (event) => {
@@ -10,7 +9,6 @@ const create = (event) => {
   const data = getFormFields(event.target)
   store.survey = data.survey
   onCreateOne()
-  two.onCreateTwo()
 }
 const onCreateOne = () => {
   api.createOne(store.survey.answer)

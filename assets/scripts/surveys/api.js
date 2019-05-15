@@ -2,7 +2,7 @@ const config = require('../config')
 const store = require('../store')
 
 // Same as updateGame
-const createSurvey = function (data) {
+const createSurvey = function () {
   return $.ajax({
     url: config.apiUrl + '/surveys',
     method: 'POST',
@@ -11,9 +11,10 @@ const createSurvey = function (data) {
     },
     data: {
       survey: {
-        title: data.survey.title,
-        description: data.survey.description,
-        questions: store.question._id
+        title: store.survey.title,
+        description: store.survey.description,
+        one: store.one._id,
+        two: store.two._id
       }
     }
   })

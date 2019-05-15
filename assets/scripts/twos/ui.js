@@ -1,8 +1,15 @@
 const store = require('../store.js')
+const survey = require('../surveys/events.js')
 
 const onCreateTwoSuccess = (response) => {
   store.two = response.two
   console.log(response)
+  console.log('======================')
+  console.log(store.one._id)
+  console.log(store.one._id)
+  console.log(store.survey)
+  console.log('======================')
+  survey.onCreateSurvey()
 }
 const failure = (response) => {
   console.log(response)
