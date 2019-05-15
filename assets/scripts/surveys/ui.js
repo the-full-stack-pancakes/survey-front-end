@@ -15,10 +15,12 @@ const onUpdateSurveySuccess = (response) => {
 const onGetYourSurveysSuccess = (response) => {
   console.log(response)
 // const getSurveysHtml = getSurveysTemplate({ surveys: data.surveys })
+// $('.container').html(getSurveysHtml)
 }
 const onDeleteSurveySuccess = (response) => {
   console.log(response)
 }
+
 const clearSurveys = () => {
   $('.content').empty()
 }
