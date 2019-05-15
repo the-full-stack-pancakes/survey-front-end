@@ -3,10 +3,7 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onCreateSurvey = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-  api.createSurvey(data)
+  api.createSurvey()
     .then(ui.onCreateSurveySuccess)
     .catch(ui.failure)
 }
@@ -32,12 +29,12 @@ const onDeleteSurvey = (id) => {
 }
 
 const surveyHandlers = function () {
-  //$('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetYourSurveys)
   $('#update-survey').on('submit', onUpdateSurvey)
   $('#delete-survey').on('click', onDeleteSurvey)
 }
 
 module.exports = {
-  surveyHandlers
+  surveyHandlers,
+  onCreateSurvey
 }

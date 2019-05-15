@@ -1,8 +1,10 @@
 const store = require('../store.js')
+const two = require('../twos/events.js')
 
 const onCreateOneSuccess = (response) => {
   store.one = response.one
-  console.log(store.one)
+  console.log(store.one._id)
+  two.onCreateTwo()
 }
 const failure = (response) => {
   console.log(response)
