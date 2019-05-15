@@ -137,23 +137,28 @@
         <form class="card card-body" id="create-survey">
           <input type="text" name="survey[title]" placeholder="Survey title" required>
           <input type="text" name="survey[description]" placeholder="Description" required>
-          <input type="text" name="survey[question]" placeholder="Question" required>
+          <!-- <input type="text" name="survey[question]" placeholder="Question" required> -->
+          <!-- <label for="disabled">Question:</label><input name="question" value="Would you rather:" disabled> -->
+
+        <input type="text" name="disabled" value="Would you rather..." disabled>
           <input type="text" name="survey[answer]" placeholder="Answer 1" required>
           <input type="text" name="survey[answer2]" placeholder="Answer 2" required>
-          <input id="create-survey" class="btn btn-dark" type="submit" value="Submit!">
+          <input id="create-survey-button" class="btn btn-dark" type="submit" value="Submit!">
         </form>
       </div>
 
       <div class="collapse" id="get-surveys-collapse" data-parent="#accordion-parent">
-        <p>I'm a get my own surveys placeholder!</p>
+        <!-- <p>I'm a get my own surveys placeholder!</p> -->
+        <div id="display-my-surveys-message"></div>
       </div>
 
       <div class="collapse" id="index-surveys-collapse" data-parent="#accordion-parent">
-        <p>I'm a get all the surveys placeholder!</p>
+        <!-- <p>I'm a get all the surveys placeholder!</p> -->
+        <div id="display-see-all-surveys-message"></div>
       </div>
     </div>
 
-
+    <div id="content" class="content row"></div>
 
 
 <!-- ** BETH'S TEST CODE -~^^~- USE JUST FOR REFERENCING IDS ** -->
