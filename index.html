@@ -127,23 +127,33 @@
         </div>
       </div>
     </section>
-    <div class="home-buttons">
-      <button id="get-surveys" type="button" class="btn btn-primary">My Surveys</button>
+
+    <div class="home-buttons accordion" id="accordion-parent">
+      <button id="get-surveys" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#get-surveys-collapse">My Surveys</button>
       <button id="create-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#create-collapse">Create Survey</button>
-      <button id="index-surveys" type="button" class="btn btn-primary">See All Surveys</button>
+      <button id="index-surveys" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#index-surveys-collapse">See All Surveys</button>
+
+      <div class="collapse" id="create-collapse" data-parent="#accordion-parent">
+        <form class="card card-body" id="create-survey">
+          <input type="text" name="survey[title]" placeholder="Survey title" required>
+          <input type="text" name="survey[description]" placeholder="Description" required>
+          <input type="text" name="survey[question]" placeholder="Question" required>
+          <input type="text" name="survey[answer]" placeholder="Answer 1" required>
+          <input type="text" name="survey[answer2]" placeholder="Answer 2" required>
+          <input id="create-survey" class="btn btn-dark" type="submit" value="Submit!">
+        </form>
+      </div>
+
+      <div class="collapse" id="get-surveys-collapse" data-parent="#accordion-parent">
+        <p>I'm a get my own surveys placeholder!</p>
+      </div>
+
+      <div class="collapse" id="index-surveys-collapse" data-parent="#accordion-parent">
+        <p>I'm a get all the surveys placeholder!</p>
+      </div>
     </div>
 
 
-    <div class="collapse" id="create-collapse">
-      <form class="card card-body" id="create-survey">
-        <input type="text" name="survey[title]" placeholder="Survey title" required>
-        <input type="text" name="survey[description]" placeholder="Description" required>
-        <input type="text" name="survey[question]" placeholder="Question" required>
-        <input type="text" name="survey[answer]" placeholder="Answer 1" required>
-        <input type="text" name="survey[answer2]" placeholder="Answer 2" required>
-        <input id="create-survey" class="btn btn-dark" type="submit" value="Submit!">
-      </form>
-    </div>
 
 
 <!-- ** BETH'S TEST CODE -~^^~- USE JUST FOR REFERENCING IDS ** -->
