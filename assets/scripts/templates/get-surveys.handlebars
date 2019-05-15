@@ -34,13 +34,14 @@
               </button>
             </div>
 
-            <form class="update-survey" data-id="{{survey._id}}">
+
+            <form class="update-survey" data-id="{{survey._id}}" data-one="{{survey.one._id}}" data-two="{{survey.two._id}}>
               <input type="text" class="form-control validate survey-update" name="survey[title]" placeholder="Title: {{survey.title}}">
               <input type="text" class="form-control validate survey-update" name="survey[answer]" placeholder="Answer 1: {{survey.one.title}}">
               <input type="text" class="form-control validate survey-update" name="survey[answer2]" placeholder="Answer 2: {{survey.two.title}}">
+
               <button class="modal-footer btn btn-warning update" type="submit">Confirm</button>
             </form>
-
           </div>
         </div>
       </div>

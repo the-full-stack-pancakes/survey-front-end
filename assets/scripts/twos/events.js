@@ -8,10 +8,7 @@ const onCreateTwo = () => {
     .then(ui.onCreateTwoSuccess)
     .catch(ui.failure)
 }
-const onUpdateTwo = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  // will need to get data from a form here and an id
+const onUpdateTwo = (data) => {
   api.updateTwo(data)
     .then(ui.onUpdateTwoSuccess)
     .catch(ui.failure)
@@ -39,5 +36,6 @@ const twoHandlers = () => {
 
 module.exports = {
   onCreateTwo,
-  twoHandlers
+  twoHandlers,
+  onUpdateTwo
 }
