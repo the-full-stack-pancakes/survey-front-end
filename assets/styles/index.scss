@@ -6,6 +6,11 @@ body {
   text-align: center;
 }
 
+.card-body {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
 .btn {
   font-weight: bold;
 }

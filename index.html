@@ -14,6 +14,8 @@
   <body>
     <h1>Would You Rather...</h1>
 
+    <div class="user-message"></div>
+
     <!--Page Mask for modal sign in and out-->
     <div class="page-mask"></div>
 
@@ -30,12 +32,12 @@
             <form id="sign-in">
               <div class="form-group">
                 <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" required>
                 <small class="form-text text-muted">Don't use real emails or password!</small>
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword1">Password</label>
-                <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
+                <input type="password" class="form-control" placeholder="Password" name="credentials[password]" required>
               </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -62,16 +64,16 @@
             <form id="sign-up">
               <div class="form-group">
                 <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" required>
                 <small class="form-text text-muted">Don't use real emails for password!</small>
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword1">Password</label>
-                <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
+                <input type="password" class="form-control" placeholder="Password" name="credentials[password]" required>
               </div>
               <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword1">Password Confirmation</label>
-                <input required type="password" class="form-control" placeholder="Password confirmation" name="credentials[password_confirmation]">
+                <input type="password" class="form-control" placeholder="Password confirmation" name="credentials[password_confirmation]" required>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -111,12 +113,12 @@
             <form id="change-password">
               <div class="form-group">
                 <label for="exampleInputEmail1">Old Password</label>
-                <input required type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password" name="passwords[old]">
+                <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password" name="passwords[old]" required>
                 <small class="form-text text-muted">Please don't use real passwords.</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">New Password</label>
-                <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="passwords[new]">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="passwords[new]" required>
                 </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -125,55 +127,65 @@
         </div>
       </div>
     </section>
+    <div class="home-buttons">
+      <button id="get-surveys" type="button" class="btn btn-primary">My Surveys</button>
+      <button id="create-button" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#create-collapse">Create Survey</button>
+      <button id="index-surveys" type="button" class="btn btn-primary">See All Surveys</button>
+    </div>
 
-  <!--  <button id="create-survey" type="button" class="btn btn-primary">Create Survey</button>
-    <button id="my-surveys" type="button" class="btn btn-primary">My Surveys</button>
-    <button id="see-all" type="button" class="btn btn-primary">See All Surveys</button> -->
+
+    <div class="collapse" id="create-collapse">
+      <form class="card card-body" id="create-survey">
+        <input type="text" name="survey[title]" placeholder="Survey title" required>
+        <input type="text" name="survey[description]" placeholder="Description" required>
+        <input type="text" name="survey[question]" placeholder="Question" required>
+        <input type="text" name="survey[answer]" placeholder="Answer 1" required>
+        <input type="text" name="survey[answer2]" placeholder="Answer 2" required>
+        <input id="create-survey" class="btn btn-dark" type="submit" value="Submit!">
+      </form>
+    </div>
 
 
-      <!--  <div class="survey-submit">
-          <form>
-          <input type="text" name="survey[title]" placeholder="survey title">
-          <input type="text" name="survey[question]" placeholder="question">
-          <input type="text" name="survey[answer]" placeholder="answer 1">
-          <input type="text" name="survey[answer2]" placeholder="answer 2">
-          <input id="survey-submit" class="btn btn-dark" type="submit" value="Submit!">
-        </form>
-      </div> -->
-      <form id="answer-form">
+<!-- ** BETH'S TEST CODE -~^^~- USE JUST FOR REFERENCING IDS ** -->
+      <!-- <form id="answer-form">
         <input type="text" name="answer[title]" placeholder="Create answer" />
         <input type="submit" value="submit" />
       </form>
       <button id="get-answers">Get answer</button>
+
       <form id="update-answer">
         <input type="text" name="answer[title]" placeholder="update answer" />
         <input type="submit" value="submit" />
       </form>
       <button id="destroy-answer">Delete answer</button>
+
       <form id="question-form">
         <input type="text" name="question[title]" placeholder="create question" />
         <input type="submit" value="submit" />
       </form>
       <button id="get-questions">Get question</button>
+
       <form id="update-question">
         <input type="text" name="question[title]" placeholder="update question" />
         <input type="submit" value="submit" />
       </form>
+
       <button id="delete-question">delete question</button>
+
       <form id="create-survey">
         <input type="text" name="survey[title]" placeholder="survey title" />
         <input type="text" name="survey[description]" placeholder="survey description" />
         <input type="submit" value="submit" />
       </form>
+
       <button id="get-surveys">Get surveys</button>
       <form id="update-survey">
         <input type="text" name="survey[title]" placeholder="survey title update" />
         <input type="text" name="survey[description]" placeholder="survey description update" />
         <input type="submit" value="submit" />
       </form>
-      <button id="delete-survey">delete survey</button>
+      <button id="delete-survey">delete survey</button> -->
 
-    <div class="user-message"></div>
 
   </body>
 </html>
