@@ -3,12 +3,22 @@
 $transparent: rgba(0, 0, 0, .5);
 
 body {
-  height: 100vh;
   text-align: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("public/road-choice.jpg");
+}
+
+.background-hero {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("public/road-choice.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.95;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 h1, .user-message, p {
@@ -36,7 +46,7 @@ h1 {
 
 .btn-primary {
   background-color: #2a8214;
-  border-color: #2faf0f
+  border-color: #2faf0f;
 }
 
 .btn-primary:hover {
@@ -45,12 +55,33 @@ h1 {
   color: #072101;
 }
 
-.modal-header {
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #2a8214;
+  border-color: #2faf0f;
+  color: #fff;
+}
+
+.welcome-sign-in, .welcome-sign-up {
   margin: 0 auto;
+}
+
+.update-header {
+  background-color: #2a8214;
 }
 
 .modal-title {
   font-size: 2rem;
+}
+
+#my-survey-content {
+  margin: 1rem auto;
+  width: 75%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.card {
+  background-color: #c9d0db;
+  opacity: 0.95;
 }
 
 .card-body {
