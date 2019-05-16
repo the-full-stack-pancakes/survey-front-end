@@ -75,11 +75,6 @@ const authHandlers = () => {
   $('.close-change-password').on('click', closeChangePassword)
   $('.toggle-side-bar').on('click', navBarToggle)
   $('.close-nav').on('click', closeNav)
-  //
-  // $('#sign-up').on('submit', onSignUp)
-  // $('#sign-in').on('submit', onSignIn)
-  // $('#change-password').on('submit', onChangePassword)
-  // $('.sign-out').on('click', onSignOut)
 }
 
 module.exports = {

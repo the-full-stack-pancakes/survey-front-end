@@ -3,36 +3,32 @@ const getSurveysTemplate = require('../templates/get-surveys.handlebars')
 const takeSurveysTemplate = require('../templates/take-surveys.handlebars')
 
 const failure = () => {
-  console.log('you fail bro!')
-  // needs to display more places
-  $('#display-my-surveys-message').text('Sorry. Something went wrong. Please try again.')
+  $('#display-my-surveys-message').text('Sorry, something went wrong. Please try again.')
 }
 const onCreateSurveySuccess = function (response) {
   store.survey = response.survey
-  // needs to display somewhere
   $('.collapse').collapse('hide')
   $('.user-message').text('You have successfully created a survey!')
+  $('#create-survey .input-reset').val("")
 }
 const onUpdateSurveySuccess = (response) => {
-  console.log(response)
-  // needs to display somewhere
   $('.user-message').text('You have successfully updated your survey!')
+  $('.collapse').collapse('hide')
+  $(".modal-backdrop").remove()
 }
 const onGetYourSurveysSuccess = (data) => {
-  $('#display-my-surveys-message').text('Your serveys are displayed below:')
+  $('.user-message').text('Your surveys are displayed below:')
   const ownedSurveys = data.surveys.filter(survey => survey.owner === store.user._id)
   const getSurveysHtml = getSurveysTemplate({ surveys: ownedSurveys })
   $('#my-survey-content').html(getSurveysHtml)
 }
 const onDeleteSurveySuccess = (response) => {
-  console.log(response)
-  // needs to display somewhere
   $('.user-message').text('You have successfully deleted your survey!')
+  $('.collapse').collapse('hide')
 }
 
 const onGetAllSurveysSuccess = (data) => {
-  console.log(data)
-  $('#display-see-all-surveys-message').text('See all serveys displayed below:')
+  $('.user-message').text('All surveys are displayed below:')
   const takeSurveysHtml = takeSurveysTemplate({ surveys: data.surveys })
   $('#see-all-survey-content').html(takeSurveysHtml)
 }
