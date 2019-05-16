@@ -9,11 +9,8 @@ const failure = () => {
 }
 const onCreateSurveySuccess = function (response) {
   store.survey = response.survey
-  console.log('======================')
-  console.log(response)
-  console.log(store.survey)
-  console.log('======================')
   // needs to display somewhere
+  $('.collapse').collapse('hide')
   $('.user-message').text('You have successfully created a survey!')
 }
 const onUpdateSurveySuccess = (response) => {

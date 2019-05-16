@@ -47,6 +47,7 @@ const signOutSuccess = function (data) {
   $('.side-bar').width('0%')
   $('#sign-in-modal').show()
   $('.welcome-sign-in').text('Goodbye!')
+  $('.collapse').collapse('hide')
 }
 
 const signOutFailure = function (data) {
