@@ -60,6 +60,7 @@ const onTakeSurvey = (event) => {
   // console.log(twoId)
     // const id = $(event.target).closest('article').data('id')
     // console.log(id)
+
   const surveyId = $(event.target).closest('form').data('id')
   console.log(surveyId)
 
@@ -79,7 +80,9 @@ const surveyHandlers = function () {
   $('.survey-response').on('submit', onTakeSurvey)
   $('#survey-response').on('submit', onTakeSurvey)
   $('#surveyResponse').on('submit', onTakeSurvey)
-  $('#see-all-survey-content').on('submit', '#survey-response', onTakeSurvey)
+  $('#see-all-survey-content').on('click', '.survey-answer-1', onTakeSurvey)
+  $('#see-all-survey-content').on('click', '.survey-answer-2', onTakeSurvey)
+  // $('#see-all-survey-content').on('submit', '#survey-response', onTakeSurvey)
 }
 
 module.exports = {
