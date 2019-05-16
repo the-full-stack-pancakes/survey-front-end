@@ -76,9 +76,6 @@ const surveyHandlers = function () {
   $('#my-survey-content').on('submit', '.update-survey', update)
 
   $('#index-surveys').on('click', onGetAllSurveys)
-  $('#my-survey-content').on('submit', '.update-survey', onUpdateSurvey)
-
-  $('#my-survey-content').on('click', '.btn-dark', onUpdateSurvey)
   $('.survey-response').on('submit', onTakeSurvey)
   $('#survey-response').on('submit', onTakeSurvey)
   $('#surveyResponse').on('submit', onTakeSurvey)
