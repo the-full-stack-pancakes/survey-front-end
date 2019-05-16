@@ -19,7 +19,7 @@ const onCreateSurveySuccess = function (response) {
 const onUpdateSurveySuccess = (response) => {
   console.log(response)
   // needs to display somewhere
-  $('#').text('You have successfully updated your survey!')
+  $('.user-message').text('You have successfully updated your survey!')
 }
 const onGetYourSurveysSuccess = (data) => {
   $('#display-my-surveys-message').text('Your serveys are displayed below:')
@@ -30,7 +30,7 @@ const onGetYourSurveysSuccess = (data) => {
 const onDeleteSurveySuccess = (response) => {
   console.log(response)
   // needs to display somewhere
-  $('#').text('You have successfully deleted your survey!')
+  $('.user-message').text('You have successfully deleted your survey!')
 }
 
 const onGetAllSurveysSuccess = (data) => {
