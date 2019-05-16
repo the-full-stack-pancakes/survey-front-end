@@ -29,8 +29,8 @@ const onDeleteOne = (id) => {
 }
 // voted
 const onVotedOne = (event) => {
-  // maybe something like this to get the ids
-// const id = $(event.target).closest('section').data('id')
+// this should work we need a button that is hooked up with a data-one thing.
+// const id = $(event.target).closest('button').data('id')
   api.votedOne(id)
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
