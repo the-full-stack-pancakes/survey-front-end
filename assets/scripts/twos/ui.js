@@ -4,32 +4,32 @@ const ui = require('../surveys/ui.js')
 const api = require('./api.js')
 
 const onCreateTwoSuccess = (response) => {
-  console.log('got here')
   store.two = response.two
   sur.createSurvey()
     .then(ui.onCreateSurveySuccess)
     .catch(ui.failure)
 }
+
 const failure = (response) => {
-  console.log(response)
+  $('.user-message').text('Sorry, something went wrong. Please try again.')
 }
+
 const onUpdateTwoSuccess = (response) => {
-  console.log(response)
+  $('.user-message').text('Update successful')
 }
+
 const onDeleteTwoSuccess = (response) => {
-  console.log(response)
+  $('.user-message').text('Delete successful')
 }
 
 const onVotedSuccess = (response) => {
+  $('.user-message').text('Thanks for your vote!')
   api.getTwo(store.voteTwo)
     .then(votedCount)
     .catch()
 }
 const votedCount = (response) => {
   store.voteTwoCount = response.two.count
-  console.log('=========')
-  console.log(store.voteTwoCount)
-  console.log('=========')
 }
 
 module.exports = {

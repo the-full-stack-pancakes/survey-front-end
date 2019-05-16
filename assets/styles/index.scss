@@ -76,9 +76,17 @@ h1 {
   width: 75%;
 }
 
+#see-all-survey-content {
+  margin: 1rem auto;
+  width: 75%;
+}
+
 .handlebars-card {
   display: grid;
   grid-template-rows: auto auto 0px;
+}
+
+.handlebars-card-owned {
   cursor: pointer;
 }
 
