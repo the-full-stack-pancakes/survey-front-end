@@ -54,6 +54,9 @@ const surveyHandlers = function () {
   $('#my-survey-content').on('submit', '.update-survey', update)
   $('#index-surveys').on('click', onGetAllSurveys)
   $('#my-survey-content').on('click', '.btn-dark', onDeleteSurvey)
+  $('#create-button').on('click', function () {
+    $('.user-message').text('')
+  })
 }
 
 module.exports = {

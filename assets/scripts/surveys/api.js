@@ -35,15 +35,13 @@ const getAllSurveys = function () {
     url: config.apiUrl + '/surveys',
     method: 'GET',
     headers: {
-      // Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
 const deleteSurvey = function (id) {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can delete
-    // a single id.
     url: config.apiUrl + `/surveys/${id}`,
     method: 'DELETE',
     headers: {
@@ -62,10 +60,6 @@ const updateSurvey = function (data) {
     data: {
       survey: {
         title: data
-        // description: data.survey.description
-        // need to find a way to update when you want a new question.
-        // might have to tie in the update on question api somehow
-        // questions: store.question._id
       }
     }
   })
