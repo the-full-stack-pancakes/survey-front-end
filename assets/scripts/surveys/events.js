@@ -43,7 +43,6 @@ const onUpdateSurvey = (data) => {
 }
 const onDeleteSurvey = () => {
   const id = $(event.target).closest('button').data('id')
-  console.log(id)
   api.deleteSurvey(id)
     .then(ui.onDeleteSurveySuccess)
     .catch(ui.failure)
