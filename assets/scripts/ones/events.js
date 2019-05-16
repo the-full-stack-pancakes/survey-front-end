@@ -28,7 +28,8 @@ const onDeleteOne = (id) => {
     .catch(ui.failure)
 }
 // voted
-const onVotedOne = () => {
+const onVotedOne = (event) => {
+  $(event.target).next('button').hide()
   const id = $(event.target).closest('button').data('id')
   store.voteOne = id
   let count = $(event.target).closest('button').data('count')
