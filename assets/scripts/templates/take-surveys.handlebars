@@ -13,16 +13,9 @@
     <!-- </section> -->
 </div>
 <div class="surveyResponse" data-id="{{survey._id}}">
-  <!-- <button type="submit" data-id="{{survey._id}}" value="submit" class="btn btn-primary survey-answer-1">{{survey.one.title}}</button> -->
-  <!-- <button type="button" data-id="{{survey._id}}" class="btn btn-primary survey-answer-2">{{survey.two.title}}</button> -->
-  <!-- <form id="survey-response" data-id="{{survey._id}}">
-    <input type="radio" name="{{survey._id}}" value="{{survey.one.title}}"> {{survey.one.title}}
-    <input type="radio" name="{{survey._id}}" value="{{survey.two.title}}"> {{survey.two.title}}
-    <button type="submit" value="submit" class="btn btn-primary survey-response">Submit</button>
-  </form> -->
 
-  <button type="submit" data-id="{{survey._id}}" value="{{survey.one.title}}" name="{{survey._id}}" class="btn btn-primary survey-answer-1">{{survey.one.title}}</button>
-  <button type="submit" data-id="{{survey._id}}" value="{{survey.two.title}}" name="{{survey._id}}" class="btn btn-primary survey-answer-2">{{survey.two.title}}</button>
+  <button type="submit" data-id="{{survey.one._id}}" value="{{survey.one.title}}" name="{{survey._id}}" data-count="{{survey.one.count}}"class="btn btn-primary survey-answer-1">{{survey.one.title}}</button>
+  <button type="submit" data-id="{{survey.two._id}}" value="{{survey.two.title}}" name="{{survey._id}}" data-count="{{survey.two.count}}"class="btn btn-primary survey-answer-2">{{survey.two.title}}</button>
 
 </div>
 </article>
