@@ -11,17 +11,15 @@ const update = (event) => {
   const id = $(event.target).closest('form').data('id')
   const oneId = $(event.target).closest('form').data('one')
   const twoId = $(event.target).closest('form').data('two')
-  console.log('===========================')
   store.updateSurvey = id
   store.updateOne = oneId
   store.updateTwo = twoId
-  console.log('===========================')
   one.onUpdateOne(data.survey.answer)
   two.onUpdateTwo(data.survey.answer2)
   onUpdateSurvey(data.survey.title)
 }
 
-const onCreateSurvey = (event) => {
+const onCreateSurvey = () => {
   api.createSurvey()
     .then(ui.onCreateSurveySuccess)
     .catch(ui.failure)
@@ -31,7 +29,6 @@ const onGetYourSurveys = () => {
     .then(ui.onGetYourSurveysSuccess)
     .catch(ui.failure)
 }
-const onUpdateSurvey = (data) => {
 
 const onGetAllSurveys = () => {
   api.getAllSurveys()
@@ -39,11 +36,7 @@ const onGetAllSurveys = () => {
     .catch(ui.failure)
 }
 
-const onUpdateSurvey = (event) => {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-  // needs to get an id somehow
+const onUpdateSurvey = (data) => {
   api.updateSurvey(data)
     .then(ui.onUpdateSurveySuccess)
     .catch(ui.failure)
