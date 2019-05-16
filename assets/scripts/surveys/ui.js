@@ -1,5 +1,6 @@
 const store = require('../store')
 const getSurveysTemplate = require('../templates/get-surveys.handlebars')
+const takeSurveysTemplate = require('../templates/take-surveys.handlebars')
 
 const failure = () => {
   console.log('you fail bro!')
@@ -33,9 +34,17 @@ const onDeleteSurveySuccess = (response) => {
 const onGetAllSurveysSuccess = (data) => {
   console.log(data)
   $('#display-see-all-surveys-message').text('See all serveys displayed below:')
-  const getSurveysHtml = getSurveysTemplate({ surveys: data.surveys })
-  $('#see-all-survey-content').html(getSurveysHtml)
+  const takeSurveysHtml = takeSurveysTemplate({ surveys: data.surveys })
+  $('#see-all-survey-content').html(takeSurveysHtml)
 }
+
+// const takeSurveySuccess = (data) => {
+//
+// }
+//
+// const takeSurveyFailure = (data) => {
+//
+// }
 
 const clearSurveys = () => {
   $('.content').empty()
@@ -49,4 +58,6 @@ module.exports = {
   onUpdateSurveySuccess,
   onDeleteSurveySuccess,
   onGetAllSurveysSuccess
+  // takeSurveySuccess,
+  // takeSurveyFailure
 }
