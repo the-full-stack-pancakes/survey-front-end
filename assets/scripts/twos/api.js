@@ -40,20 +40,16 @@ const deleteTwo = (id) => {
     }
   })
 }
-const votedTwo = (id) => {
+const votedTwo = (id, num) => {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
-    url: config.apiUrl + `/ones/${id}`,
+    url: config.apiUrl + `/twos/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
-      one: {
-        // need to get data from a form
-        // still needs testing
-        count: store.survey.two.count + 1
+      two: {
+        count: num
       }
     }
   })

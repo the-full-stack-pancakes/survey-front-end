@@ -49,41 +49,10 @@ const onDeleteSurvey = () => {
     .catch(ui.failure)
 }
 
-const onTakeSurvey = (event) => {
-  event.preventDefault()
-
-  console.log('click')
-  console.log(event)
-  // let id = $event.target
-  // const oneId = $(event.target).closest('form').data('one')
-  // console.log(oneId)
-  // const twoId = $(event.target).closest('form').data('two')
-  // console.log(twoId)
-  // const id = $(event.target).closest('article').data('id')
-  // console.log(id)
-  const surveyId = $(event.target).closest('form').data('id')
-  console.log(surveyId)
-
-  const answer = $(`input[name='${surveyId}']`).val()
-  console.log(answer)
-
-  // api.takeSurvey(surveyId, answer)
-  //   .then(ui.takeSurveySuccess)
-  //   .catch(ui.takeSurveyFailure)
-}
-
 const surveyHandlers = function () {
   $('#get-surveys').on('click', onGetYourSurveys)
   $('#my-survey-content').on('submit', '.update-survey', update)
-
   $('#index-surveys').on('click', onGetAllSurveys)
-  $('#my-survey-content').on('submit', '.update-survey', onUpdateSurvey)
-
-  $('#my-survey-content').on('click', '.btn-dark', onUpdateSurvey)
-  $('.survey-response').on('submit', onTakeSurvey)
-  $('#survey-response').on('submit', onTakeSurvey)
-  $('#surveyResponse').on('submit', onTakeSurvey)
-  $('#see-all-survey-content').on('submit', '#survey-response', onTakeSurvey)
   $('#my-survey-content').on('click', '.btn-dark', onDeleteSurvey)
 }
 
