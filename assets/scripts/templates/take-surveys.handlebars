@@ -1,0 +1,24 @@
+{{#each surveys as |survey|}}
+{{log survey}}
+<article class="card" data-target="{{survey._id}}">
+  <div class="card-header">
+
+      <h2>{{survey.title}}</h2>
+      <br></br>
+      <p class="handlebars-q-and-a">
+        Would you rather: {{survey.question}}
+        {{survey.one.title}} or
+        {{survey.two.title}}
+      </p>
+    <!-- </section> -->
+</div>
+<div class="surveyResponse">
+  <form id="survey-response" data-id="{{survey._id}}">
+    <input type="radio" name="{{survey._id}}" value="{{survey.one.title}}"> {{survey.one.title}}
+    <input type="radio" name="{{survey._id}}" value="{{survey.two.title}}"> {{survey.two.title}}
+    <button type="submit" value="submit" class="btn btn-primary survey-response">Submit</button>
+  </form>
+
+</div>
+</article>
+{{/each}}

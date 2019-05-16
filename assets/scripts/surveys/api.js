@@ -71,10 +71,26 @@ const updateSurvey = function (data) {
   })
 }
 
+const takeSurvey = function (surveyId, answer) {
+  return $.ajax({
+    url: config.apiUrl + `/surveys`,
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'response': {
+        'answer': answer,
+        'surveyId': surveyId
+      }
+    }
+  })
+}
 module.exports = {
   createSurvey,
   getYourSurveys,
   deleteSurvey,
   updateSurvey,
-  getAllSurveys
+  getAllSurveys,
+  takeSurvey
 }
