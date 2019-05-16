@@ -52,9 +52,17 @@ const votedTwo = (id, num) => {
   })
 }
 
+const getTwo = (id) => {
+  return $.ajax({
+    url: config.apiUrl + `/twos/${id}`,
+    method: 'GET'
+  })
+}
+
 module.exports = {
   createTwo,
   updateTwo,
   deleteTwo,
-  votedTwo
+  votedTwo,
+  getTwo
 }

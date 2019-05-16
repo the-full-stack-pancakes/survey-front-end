@@ -22,6 +22,7 @@ const onDeleteTwo = (id) => {
 // voted
 const onVotedTwo = (event) => {
   const id = $(event.target).closest('button').data('id')
+  store.voteTwo = id
   let count = $(event.target).closest('button').data('count')
   count += 1
   api.votedTwo(id, count)

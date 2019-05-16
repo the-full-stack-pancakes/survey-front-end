@@ -1,6 +1,7 @@
 const store = require('../store.js')
 const sur = require('../surveys/api.js')
 const ui = require('../surveys/ui.js')
+const api = require('./api.js')
 
 const onCreateTwoSuccess = (response) => {
   console.log('got here')
@@ -18,8 +19,17 @@ const onUpdateTwoSuccess = (response) => {
 const onDeleteTwoSuccess = (response) => {
   console.log(response)
 }
+
 const onVotedSuccess = (response) => {
-  console.log(response)
+  api.getTwo(store.voteTwo)
+    .then(votedCount)
+    .catch()
+}
+const votedCount = (response) => {
+  store.voteTwoCount = response.two.count
+  console.log('=========')
+  console.log(store.voteTwoCount)
+  console.log('=========')
 }
 
 module.exports = {

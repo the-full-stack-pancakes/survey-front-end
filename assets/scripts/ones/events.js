@@ -30,10 +30,10 @@ const onDeleteOne = (id) => {
 // voted
 const onVotedOne = () => {
   const id = $(event.target).closest('button').data('id')
+  store.voteOne = id
   let count = $(event.target).closest('button').data('count')
   count += 1
   api.votedOne(id, count)
-    // .then(function () { onUpdateOne(count) })
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
 }
