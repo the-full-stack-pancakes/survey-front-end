@@ -1,17 +1,19 @@
 {{#each surveys as |survey|}}
 {{log survey}}
-<div class="card">
-  <button type="button" class="card-header btn" data-toggle="collapse" data-target="#collapse-buttons-{{survey._id}}">
+{{log survey.owner}}
+<div class="card col-md-4">
+  <div class="card-header" data-toggle="collapse" data-target="#collapse-buttons-{{survey._id}}">
     <section>
       <h2>{{survey.title}}</h2>
-      <br></br>
+      <br>
       <p class="handlebars-q-and-a">
-        Would you rather: {{survey.question}}
-        {{survey.one.title}} or
+        Would you rather:
+        {{survey.one.title}}
+        <br> -or- <br>
         {{survey.two.title}}
       </p>
     </section>
-  </button>
+  </div>
 
   <div class="collapse sub-card" id="collapse-buttons-{{survey._id}}">
     <div class="container" >
@@ -34,8 +36,8 @@
             </button>
           </div>
 
-          <form class="update-survey" data-id="{{survey._id}}" data-one="{{survey.one._id}}" data-two="{{survey.two._id}}">
 
+          <form class="update-survey" data-id="{{survey._id}}" data-one="{{survey.one._id}}" data-two="{{survey.two._id}}">
             <input type="text" class="form-control validate survey-update" name="survey[title]" placeholder="Title: {{survey.title}}">
             <input type="text" class="form-control validate survey-update" name="survey[answer]" placeholder="Answer 1: {{survey.one.title}}">
             <input type="text" class="form-control validate survey-update" name="survey[answer2]" placeholder="Answer 2: {{survey.two.title}}">
