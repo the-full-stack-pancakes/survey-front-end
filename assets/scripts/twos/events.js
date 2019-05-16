@@ -21,6 +21,7 @@ const onDeleteTwo = (id) => {
 }
 // voted
 const onVotedTwo = (event) => {
+  $(event.target).prev('button').hide()
   const id = $(event.target).closest('button').data('id')
   store.voteTwo = id
   let count = $(event.target).closest('button').data('count')
