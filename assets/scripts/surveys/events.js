@@ -41,8 +41,9 @@ const onUpdateSurvey = (data) => {
     .then(ui.onUpdateSurveySuccess)
     .catch(ui.failure)
 }
-const onDeleteSurvey = (id) => {
-  // needs to get an id somehow
+const onDeleteSurvey = () => {
+  const id = $(event.target).closest('button').data('id')
+  console.log(id)
   api.deleteSurvey(id)
     .then(ui.onDeleteSurveySuccess)
     .catch(ui.failure)
@@ -58,8 +59,8 @@ const onTakeSurvey = (event) => {
   // console.log(oneId)
   // const twoId = $(event.target).closest('form').data('two')
   // console.log(twoId)
-    // const id = $(event.target).closest('article').data('id')
-    // console.log(id)
+  // const id = $(event.target).closest('article').data('id')
+  // console.log(id)
   const surveyId = $(event.target).closest('form').data('id')
   console.log(surveyId)
 
@@ -83,6 +84,7 @@ const surveyHandlers = function () {
   $('#survey-response').on('submit', onTakeSurvey)
   $('#surveyResponse').on('submit', onTakeSurvey)
   $('#see-all-survey-content').on('submit', '#survey-response', onTakeSurvey)
+  $('#my-survey-content').on('click', '.btn-dark', onDeleteSurvey)
 }
 
 module.exports = {
