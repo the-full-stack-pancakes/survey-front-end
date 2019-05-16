@@ -49,6 +49,7 @@ const onDeleteSurvey = () => {
     .catch(ui.failure)
 }
 
+
 const surveyHandlers = function () {
   $('#get-surveys').on('click', onGetYourSurveys)
   $('#my-survey-content').on('submit', '.update-survey', update)

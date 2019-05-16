@@ -25,6 +25,7 @@ const onVotedTwo = (event) => {
   store.voteTwo = id
   let count = $(event.target).closest('button').data('count')
   count += 1
+  $(event.target).siblings('.displayResults').children('.voteTwoCount').text(count)
   api.votedTwo(id, count)
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
