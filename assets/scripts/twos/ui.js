@@ -1,10 +1,13 @@
 const store = require('../store.js')
 const sur = require('../surveys/api.js')
+const ui = require('../surveys/ui.js')
 
 const onCreateTwoSuccess = (response) => {
   console.log('got here')
   store.two = response.two
   sur.createSurvey()
+    .then(ui.onCreateSurveySuccess)
+    .catch(ui.failure)
 }
 const failure = (response) => {
   console.log(response)

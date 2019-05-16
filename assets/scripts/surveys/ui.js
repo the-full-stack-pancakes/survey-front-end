@@ -7,12 +7,14 @@ const failure = () => {
   // needs to display more places
   $('#display-my-surveys-message').text('Sorry. Something went wrong. Please try again.')
 }
-const oncreateSurveySuccess = function (response) {
+const onCreateSurveySuccess = function (response) {
   store.survey = response.survey
+  console.log('======================')
   console.log(response)
   console.log(store.survey)
+  console.log('======================')
   // needs to display somewhere
-  $('#').text('You have successfully created a survey!')
+  $('.user-message').text('You have successfully created a survey!')
 }
 const onUpdateSurveySuccess = (response) => {
   console.log(response)
@@ -51,7 +53,7 @@ const clearSurveys = () => {
 }
 
 module.exports = {
-  oncreateSurveySuccess,
+  onCreateSurveySuccess,
   onGetYourSurveysSuccess,
   clearSurveys,
   failure,
