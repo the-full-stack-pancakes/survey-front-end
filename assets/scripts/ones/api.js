@@ -16,7 +16,6 @@ const createOne = (data) => {
   })
 }
 const updateOne = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + `/ones/${store.updateOne}`,
     method: 'PATCH',
@@ -32,8 +31,6 @@ const updateOne = (data) => {
 }
 const deleteOne = (id) => {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
     url: config.apiUrl + `/ones/${id}`,
     method: 'DELETE',
     headers: {

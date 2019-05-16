@@ -6,12 +6,12 @@ const signUpSuccess = function (data) {
   $('form').trigger('reset')
   $('#sign-up-modal').hide()
   $('#sign-in-modal').show()
-  $('.welcome-sign-in').text('Success now Sign In!')
+  $('.welcome-sign-in').text('Success! Now sign in!')
 }
 
 const signUpFailure = function (data) {
   $('form').trigger('reset')
-  $('.welcome-sign-up').text('Please try again')
+  $('.welcome-sign-up').text('Something went wrong. Please try again')
 }
 
 const signInSuccess = function (data) {
@@ -25,7 +25,7 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (data) {
   $('form').trigger('reset')
-  $('.welcome-sign-in').text('Please try again')
+  $('.welcome-sign-in').text('Sign-in error. Please try again')
 }
 
 const changePasswordSuccess = function (data) {

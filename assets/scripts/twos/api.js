@@ -15,6 +15,7 @@ const createTwo = (data) => {
     }
   })
 }
+
 const updateTwo = (data) => {
   return $.ajax({
     url: config.apiUrl + `/twos/${store.updateTwo}`,
@@ -29,10 +30,9 @@ const updateTwo = (data) => {
     }
   })
 }
+
 const deleteTwo = (id) => {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
     url: config.apiUrl + `/twos/${id}`,
     method: 'DELETE',
     headers: {
@@ -40,6 +40,7 @@ const deleteTwo = (id) => {
     }
   })
 }
+
 const votedTwo = (id, num) => {
   return $.ajax({
     url: config.apiUrl + `/twos/${id}`,
