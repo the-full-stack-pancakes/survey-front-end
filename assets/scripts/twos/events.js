@@ -21,14 +21,16 @@ const onDeleteTwo = (id) => {
 }
 // voted
 const onVotedTwo = (event) => {
-  // maybe something like this to get the ids
-// const id = $(event.target).closest('section').data('id')
-  api.votedTwo(id)
+  const id = $(event.target).closest('button').data('id')
+  let count = $(event.target).closest('button').data('count')
+  count += 1
+  api.votedTwo(id, count)
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
 }
 
 const twoHandlers = () => {
+  $('#see-all-survey-content').on('click', '.survey-answer-2', onVotedTwo)
   // need a button for onUpdateTwo
   // need a button for onDeleteTwo
   // need a button for onVotedTwo

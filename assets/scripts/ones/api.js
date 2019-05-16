@@ -41,10 +41,8 @@ const deleteOne = (id) => {
     }
   })
 }
-const votedOne = (id) => {
+const votedOne = (id, num) => {
   return $.ajax({
-    // this is going to need a way to get an id of an answer so we can update
-    // a single id.
     url: config.apiUrl + `/ones/${id}`,
     method: 'PATCH',
     headers: {
@@ -52,9 +50,7 @@ const votedOne = (id) => {
     },
     data: {
       one: {
-        // need to get data from a form
-        // still needs testing
-        count: store.survey.one.count + 1
+        count: num
       }
     }
   })

@@ -28,16 +28,18 @@ const onDeleteOne = (id) => {
     .catch(ui.failure)
 }
 // voted
-const onVotedOne = (event) => {
-// this should work we need a button that is hooked up with a data-one thing.
-// const id = $(event.target).closest('button').data('id')
-  api.votedOne(id)
+const onVotedOne = () => {
+  const id = $(event.target).closest('button').data('id')
+  let count = $(event.target).closest('button').data('count')
+  count += 1
+  api.votedOne(id, count)
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
 }
 
 const oneHandlers = () => {
   $('#create-survey').on('submit', create)
+  $('#see-all-survey-content').on('click', '.survey-answer-1', onVotedOne)
   // need a button for onUpdateOne
   // need a button for onDeleteOne
   // need a button for votedOne
