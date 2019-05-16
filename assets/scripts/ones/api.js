@@ -45,9 +45,6 @@ const votedOne = (id, num) => {
   return $.ajax({
     url: config.apiUrl + `/ones/${id}`,
     method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
     data: {
       one: {
         count: num
@@ -56,9 +53,17 @@ const votedOne = (id, num) => {
   })
 }
 
+const getOne = (id) => {
+  return $.ajax({
+    url: config.apiUrl + `/ones/${id}`,
+    method: 'GET'
+  })
+}
+
 module.exports = {
   createOne,
   updateOne,
   deleteOne,
-  votedOne
+  votedOne,
+  getOne
 }

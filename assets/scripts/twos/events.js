@@ -22,8 +22,10 @@ const onDeleteTwo = (id) => {
 // voted
 const onVotedTwo = (event) => {
   const id = $(event.target).closest('button').data('id')
+  store.voteTwo = id
   let count = $(event.target).closest('button').data('count')
   count += 1
+  $(event.target).siblings('.displayResults').children('.voteTwoCount').text(count)
   api.votedTwo(id, count)
     .then(ui.onVotedSuccess)
     .catch(ui.failure)

@@ -21,7 +21,7 @@ const onUpdateSurveySuccess = (response) => {
 const onGetYourSurveysSuccess = (data) => {
   $('#display-my-surveys-message').text('Your serveys are displayed below:')
   const ownedSurveys = data.surveys.filter(survey => survey.owner === store.user._id)
-  const getSurveysHtml = getSurveysTemplate({ surveys: ownedSurveys})
+  const getSurveysHtml = getSurveysTemplate({ surveys: ownedSurveys })
   $('#my-survey-content').html(getSurveysHtml)
 }
 const onDeleteSurveySuccess = (response) => {
