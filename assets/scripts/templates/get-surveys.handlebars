@@ -1,7 +1,7 @@
 {{#each surveys as |survey|}}
 {{log survey}}
 {{log survey.owner}}
-<div class="card col-md-4">
+<div class="card col-md-4 handlebars-card">
   <div class="card-header" data-toggle="collapse" data-target="#collapse-buttons-{{survey._id}}">
     <section>
       <h2>{{survey.title}}</h2>
