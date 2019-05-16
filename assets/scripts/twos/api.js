@@ -44,9 +44,6 @@ const votedTwo = (id, num) => {
   return $.ajax({
     url: config.apiUrl + `/twos/${id}`,
     method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
     data: {
       two: {
         count: num

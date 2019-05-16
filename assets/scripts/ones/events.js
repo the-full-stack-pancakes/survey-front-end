@@ -33,6 +33,7 @@ const onVotedOne = () => {
   let count = $(event.target).closest('button').data('count')
   count += 1
   api.votedOne(id, count)
+    // .then(function () { onUpdateOne(count) })
     .then(ui.onVotedSuccess)
     .catch(ui.failure)
 }

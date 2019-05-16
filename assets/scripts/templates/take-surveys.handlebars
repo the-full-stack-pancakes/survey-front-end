@@ -16,7 +16,18 @@
 
   <button type="submit" data-id="{{survey.one._id}}" value="{{survey.one.title}}" name="{{survey._id}}" data-count="{{survey.one.count}}"class="btn btn-primary survey-answer-1">{{survey.one.title}}</button>
   <button type="submit" data-id="{{survey.two._id}}" value="{{survey.two.title}}" name="{{survey._id}}" data-count="{{survey.two.count}}"class="btn btn-primary survey-answer-2">{{survey.two.title}}</button>
+  <div class="displayResults">
+  {{survey.one.title}} = {{survey.one.count}} votes
+  <br>
+  {{survey.two.title}} = {{survey.two.count}} votes
+</div>
 
 </div>
+
+<div id="chartContainer" style="height: 200px; width: 50%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
 </article>
 {{/each}}
