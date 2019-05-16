@@ -21,16 +21,43 @@ body {
   right: 0;
 }
 
-h1, .user-message, p {
+h1, .user-message {
   color: #fff;
   font-weight: bold;
 }
 
 h1 {
+  font-family: 'Stylish', sans-serif;
   margin-top: 1rem;
+  font-size: 3rem;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-family: 'Stylish', sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: 'Stylish', sans-serif;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-family: "Kalam", cursive;
+  font-weight: bold;
 }
 
 .user-message {
+  font-family: 'Stylish', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
@@ -39,6 +66,7 @@ h1 {
 }
 
 .btn {
+  font-family: "Kalam", cursive;
   font-weight: bold;
 }
 
@@ -81,7 +109,7 @@ h1 {
   width: 75%;
 }
 
-.handlebars-card {
+.handlebars-card, .handlebars-card-owned {
   display: grid;
   grid-template-rows: auto auto 0px;
 }
@@ -107,6 +135,10 @@ h1 {
 .handlebars-q-and-a {
   color: black;
   word-break: break-all;
+}
+
+.or {
+  font-weight: bold;
 }
 
 .page-mask {

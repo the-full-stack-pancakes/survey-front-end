@@ -5,12 +5,13 @@
       <section>
         <h2>{{survey.title}}</h2>
         <br>
-        <p class="handlebars-q-and-a">
-          Would you rather:
-          {{survey.one.title}}
-          <br> -or- <br>
-          {{survey.two.title}}
-        </p>
+        <div class="handlebars-q-and-a">
+          <h6>Would you rather:</h6>
+          <br>
+          <p>{{survey.one.title}}</p>
+          <p class="or">-or-</p>
+          <p>{{survey.two.title}}</p>
+        </div>
       </section>
     </div>
     <div class="surveyResponse" data-id="{{survey._id}}">
