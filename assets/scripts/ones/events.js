@@ -38,6 +38,7 @@ const onVotedOne = (event) => {
   store.voteOne = id
   let count = $(event.target).closest('button').data('count')
   count += 1
+  store.count = count
   $(event.target).siblings('.displayResults').children('.voteOneCount').text(count)
 
   api.votedOne(id, count)

@@ -52,6 +52,7 @@ h6 {
   font-size: 1.5rem;
   font-family: "Kalam", cursive;
   font-weight: bold;
+  word-break: keep-all;
 }
 
 .user-message {
@@ -106,8 +107,13 @@ h6 {
 
 #see-all-survey-content {
   margin: 1rem auto;
-  width: 75%;
+  width: 100%;
 }
+.handlebars-card-all {
+  margin: 10px;
+  width: 100%;
+  // grid-template-columns: 100px 100px 100px;
+  }
 
 .handlebars-card, .handlebars-card-owned {
   display: grid;
