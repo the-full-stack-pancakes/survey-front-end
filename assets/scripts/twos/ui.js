@@ -30,6 +30,7 @@ const onVotedSuccess = (response) => {
 }
 const votedCount = (response) => {
   store.voteTwoCount = response.two.count
+
 }
 
 module.exports = {

@@ -4,6 +4,9 @@ const takeSurveysTemplate = require('../templates/take-surveys.handlebars')
 // const CanvasJS = require('./canvasjs.min')
 const Chart = require('chart.js')
 
+const one = require('../ones/ui.js')
+const two = require('../twos/ui.js')
+
 const failure = () => {
   $('.user-message').text('Sorry, something went wrong. Please try again.')
 }
@@ -45,8 +48,18 @@ const onGetAllSurveysSuccess = (data) => {
   console.log(data.surveys)
   $('#see-all-survey-content').html(takeSurveysHtml)
   $('.displayResults').hide()
+
+  // THEN I NEED THE CLICK TO TRIGGER THE UI.VOTEDCOUNT IN ONE FOLDER AND
+  // THE UI.VOTEDCOUNT IN TWO FOLDER
+
+  //   .then(one.votedCount)
+  // console.log(one.votedCount)
+  // console.log('ooooooooo')
+  // console.log(votedCount)
   $('#see-all-survey-content').on('click', '.survey-btn', function () {
-    console.log('we need to show here')
+    // console.log('we need to show here')
+    // console.log('data on click:', data)
+    // console.log(store.voteOneCount)
     // $('.displayResults', this).show()
     // $(this).find('.displayResults').show()
     // let target = $(this).data('target')
@@ -118,15 +131,20 @@ console.log(data.surveys[1].one.count)
 // })
 // chart.render()
 // $('#chartContainer')
+//
+// if ($('#see-all-survey-content').on('click', '.survey-answer-2')) {
+//     console.log('data2 plus 1: ', data.surveys.two.count + 1)
+// }
+//
+// if ($('#see-all-survey-content').on('click', '.survey-answer-1')) {
+//     console.log('data1 plus 1: ', data.surveys.one.count + 1)
+// }
 
 data.surveys.forEach(survey => {
-    // const [optionOne, optionTwo] = Object.keys(survey.reducedResponses)
-    // if (survey.taken) {
-    // eslint-disable-next-line
-      new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
+    new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
       type: 'horizontalBar',
       data: {
-        // labels on the Y axis of chart
+        // Y axis label
         labels: [survey.one.title, survey.two.title],
         datasets: [
           {
@@ -145,15 +163,15 @@ data.surveys.forEach(survey => {
             {
               ticks: {
                 beginAtZero: true
-                // callback: function (value) { if (value % 1 === 0) { return value } }
               }
             }
           ]
         }
       }
     })
-    // }
   })
+
+  Chart.update()
 }
 
 const onDeleteSurveySuccess = (response) => {
