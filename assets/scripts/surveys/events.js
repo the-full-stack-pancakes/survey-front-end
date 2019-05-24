@@ -48,14 +48,18 @@ const onDeleteSurvey = () => {
     .catch(ui.failure)
 }
 
+// const onUpdateChart = () => {
+//   ui.updateSurvey()
+// }
+
 const surveyHandlers = function () {
   $('#get-surveys').on('click', onGetYourSurveys)
   $('#my-survey-content').on('submit', '.update-survey', update)
   $('#index-surveys').on('click', onGetAllSurveys)
   $('#my-survey-content').on('click', '.btn-dark', onDeleteSurvey)
-  $('#create-button').on('click', function () {
-    $('.user-message').text('')
-  })
+  // $('#create-button').on('click', function () {
+  // $('.user-message').text('')
+  $('#my-survey-content').on('submit', '.survey-btn', onGetAllSurveys)
 }
 
 module.exports = {

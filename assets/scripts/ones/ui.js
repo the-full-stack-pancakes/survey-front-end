@@ -2,7 +2,7 @@ const store = require('../store.js')
 const two = require('../twos/events.js')
 const api = require('./api.js')
 const Chart = require('chart.js')
-const surveyEvents = require('../surveys/events.js')
+// const surveyEvents = require('../surveys/events.js')
 
 const onCreateOneSuccess = (response) => {
   store.one = response.one
@@ -31,13 +31,14 @@ const votedCount = (response) => {
   //   chart.data.data[0] = store.voteOneCount
   // })
   // chart.render()
-
-  // function updateChart1 (Chart) {
-  //   Chart.data.datasets.data = store.voteOneCount
-  //   Chart.update()
-// }
-  surveyEvents.onGetAllSurveys()
 }
+  // const updateChart1 = (Chart) => {
+  //   Chart.data.datasets.data[0] = 1
+  //   Chart.update()
+  // }
+
+
+
 
 module.exports = {
   onCreateOneSuccess,
@@ -46,4 +47,5 @@ module.exports = {
   onDeleteOneSuccess,
   onVotedSuccess,
   votedCount
+  // updateChart1
 }
