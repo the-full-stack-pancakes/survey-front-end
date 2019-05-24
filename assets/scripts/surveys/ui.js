@@ -3,6 +3,7 @@ const getSurveysTemplate = require('../templates/get-surveys.handlebars')
 const takeSurveysTemplate = require('../templates/take-surveys.handlebars')
 // const CanvasJS = require('./canvasjs.min')
 const Chart = require('chart.js')
+const chartUpdate = require('../lib/chart')
 
 const one = require('../ones/ui.js')
 const two = require('../twos/ui.js')
@@ -111,6 +112,10 @@ const onGetAllSurveysSuccess = (data) => {
   store.percentTotalVotes2 = percentTotalVotes2 + '%'
   console.log(percentTotalVotes2)
 
+  store.surveys = data.surveys
+  chartUpdate(store.surveys)
+
+
   // $(".progress-bar").css("width", i + "%").text(i + " %");
   //
   //   let chart = new CanvasJS.Chart('chartContainer', {
@@ -143,40 +148,40 @@ const onGetAllSurveysSuccess = (data) => {
   // if ($('#see-all-survey-content').on('click', '.survey-answer-1')) {
   //     console.log('data1 plus 1: ', data.surveys.one.count + 1)
   // }
-console.log ('=========')
-console.log ('this is store', store)
-console.log ('=========')
-
-  data.surveys.forEach(survey => {
-    let surveyChart = new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
-      type: 'horizontalBar',
-      data: {
-        // Y axis label
-        labels: [survey.one.title, survey.two.title],
-        datasets: [{
-          label: '',
-          // colors of bars
-          backgroundColor: ['#76D7C4', '#287D9D'],
-          // data to display
-          data: [survey.one.count, survey.two.count]
-        }]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    })
-  })
-
-  Chart.update()
+// console.log ('=========')
+// console.log ('this is store', store)
+// console.log ('=========')
+//
+//   data.surveys.forEach(survey => {
+//     let surveyChart = new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
+//       type: 'horizontalBar',
+//       data: {
+//         // Y axis label
+//         labels: [survey.one.title, survey.two.title],
+//         datasets: [{
+//           label: '',
+//           // colors of bars
+//           backgroundColor: ['#76D7C4', '#287D9D'],
+//           // data to display
+//           data: [survey.one.count, survey.two.count]
+//         }]
+//       },
+//       options: {
+//         legend: {
+//           display: false
+//         },
+//         scales: {
+//           xAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       }
+//     })
+//   })
+//
+//   Chart.update()
 }
 
 const onDeleteSurveySuccess = (response) => {

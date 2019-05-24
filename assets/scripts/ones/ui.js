@@ -2,6 +2,7 @@ const store = require('../store.js')
 const two = require('../twos/events.js')
 const api = require('./api.js')
 const Chart = require('chart.js')
+const chartUpdate = require('../lib/chart')
 // const surveyEvents = require('../surveys/events.js')
 
 const onCreateOneSuccess = (response) => {
@@ -24,18 +25,28 @@ const onVotedSuccess = (response) => {
     .catch()
 }
 const votedCount = (response) => {
-  console.log(response)
-  store.voteOneCount = response.one.count
+  console.log('response for votedCount', response)
+  // store.voteOneCount = response.one.count
   console.log('store voteOneCount', store.voteOneCount)
+  let idOne = response.one._id
   // $('#see-all-survey-content').click(function () {
   //   chart.data.data[0] = store.voteOneCount
   // })
   // chart.render()
+  let survey = store.surveys.find(function (survey) {
+    return survey.one._id === idOne
+  })
+
+  survey.one.count = response.one.count
+  console.log(survey)
+  console.log('+++++++')
+
+  chartUpdate(store.surveys)
 }
-  // const updateChart1 = (Chart) => {
-  //   Chart.data.datasets.data[0] = 1
-  //   Chart.update()
-  // }
+// const updateChart1 = (Chart) => {
+//   Chart.data.datasets.data[0] = 1
+//   Chart.update()
+// }
 
 
 

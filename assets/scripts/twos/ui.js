@@ -2,6 +2,8 @@ const store = require('../store.js')
 const sur = require('../surveys/api.js')
 const ui = require('../surveys/ui.js')
 const api = require('./api.js')
+const Chart = require('chart.js')
+const chartUpdate = require('../lib/chart')
 
 const onCreateTwoSuccess = (response) => {
   store.two = response.two
@@ -31,6 +33,7 @@ const onVotedSuccess = (response) => {
 const votedCount = (response) => {
   store.voteTwoCount = response.two.count
 
+  chartUpdate(store.surveys)
 }
 
 module.exports = {
