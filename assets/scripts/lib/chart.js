@@ -3,12 +3,30 @@
 const Chart = require('chart.js')
 const store = require('../store')
 
+let surveyChart
+$('#chart-wrapper').remove()
 
-const chartUpdate = (surveys) => {
+// if (surveyChart !== undefined || surveyChart !== null) {
+//   console.log('hi')
+// }
+// surveyChart.destroy()
+
+let chartUpdate = (surveys) => {
+  // if (surveyChart !== undefined || surveyChart !== null) {
+  //   // config.data.datasets.forEach(function(dataset, datasetIndex) {
+  //   // dataset.data.shift()
+  //   surveyChart.destroy()
+  //   // surveyChart.clear()
+  // }
+
+  console.log('++++========+++')
   console.log(store)
-  console.log('hello Ben')
+  console.log('+++========++++')
+  // console.log('hello Ben')
   surveys.forEach(survey => {
-    const surveyChart = new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
+
+    surveyChart = new Chart(document.getElementById(`bar-chart-${survey.one.title}`), {
+
       type: 'horizontalBar',
       data: {
         // Y axis label
@@ -22,6 +40,8 @@ const chartUpdate = (surveys) => {
         }]
       },
       options: {
+        // tooltips: {enabled: false},
+        // hover: {mode: null},
         legend: {
           display: false
         },
@@ -34,8 +54,15 @@ const chartUpdate = (surveys) => {
         }
       }
     })
-    console.log(surveyChart)
-    // Chart.update()
+    // surveyChart.destroy()
+    // if (surveyChart.data.dataset !== 'undefined') {
+    //   surveyChart.data.dataset.destroy()
+    // }
+
+    surveyChart.update()
+    // if (surveyChart) {
+    //   surveyChart.destroy()
+    // }
   })
 }
 

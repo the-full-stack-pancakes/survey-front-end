@@ -3,6 +3,7 @@ const sur = require('../surveys/api.js')
 const ui = require('../surveys/ui.js')
 const api = require('./api.js')
 const Chart = require('chart.js')
+const surveyChart = require('../lib/chart')
 const chartUpdate = require('../lib/chart')
 
 const onCreateTwoSuccess = (response) => {
@@ -33,6 +34,29 @@ const onVotedSuccess = (response) => {
 const votedCount = (response) => {
   store.voteTwoCount = response.two.count
 
+  let idTwo = response.two._id
+
+  let survey = store.surveys.find(function (survey) {
+    return survey.two._id === idTwo
+  })
+
+  survey.two.count = response.two.count
+  console.log('survey 2:', survey)
+  console.log('survey.two.count in twos.ui: ', survey.two.count)
+
+  // if (chartUpdate) {
+  //   chartUpdate.destroy()
+  // }
+//   if (surveyChart) {
+//     surveyChart.destroy()
+// }
+  // $('#chart-wrapper').empty()
+  // chartUpdate.destroy()
+  // surveyChart.destroy()
+  if (surveyChart !== undefined || surveyChart !== null) {
+    console.log('hi')
+  }
+  // Chart.destroy()
   chartUpdate(store.surveys)
 }
 
@@ -41,5 +65,6 @@ module.exports = {
   failure,
   onUpdateTwoSuccess,
   onDeleteTwoSuccess,
-  onVotedSuccess
+  onVotedSuccess,
+  votedCount
 }

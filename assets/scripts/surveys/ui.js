@@ -45,12 +45,12 @@ const onSurveyTaken = (data) => {
   }))
 }
 const onGetAllSurveysSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('.user-message').text('All surveys are displayed below:')
   const takeSurveysHtml = takeSurveysTemplate({
     surveys: data.surveys
   })
-  console.log(data.surveys)
+  // console.log(data.surveys)
   $('#see-all-survey-content').html(takeSurveysHtml)
   $('.displayResults').hide()
 
@@ -79,41 +79,41 @@ const onGetAllSurveysSuccess = (data) => {
   // $('#see-all-survey-content').on('click', '.survey-answer-2', function () {
   //   $(this).first('.displayResults').show()
   // })
-
-  let arr = data.surveys
-  for (let i = 0; i < arr.length; i++) {
-    let arrOneCount = arr[i].one.count
-    let arrId = arr[i]._id
-    store.arrOneCount = arrOneCount
-    store.arrId = arrId
-    console.log('++++++++++')
-    console.log(arrOneCount, arrId)
-    console.log('++++++++++')
-  }
-  for (let i = 0; i < arr.length; i++) {
-    let arrTwoCount = arr[i].two.count
-    let arrId = arr[i]._id
-    store.arrTwoCount = arrTwoCount
-    store.arrId = arrId
-    console.log(arrTwoCount, arrId)
-  }
-  console.log(data.surveys[1].one.count)
-
-  let totalVotes1 = data.surveys[0].one.count
-  let totalVotes2 = data.surveys[0].two.count
-  console.log(totalVotes1)
-  console.log(totalVotes2)
-  let totalVotes = totalVotes1 + totalVotes2
-  console.log(totalVotes)
-  let percentTotalVotes1 = Math.round((totalVotes1 / totalVotes) * 100)
-  console.log(percentTotalVotes1)
-  store.percentTotalVotes1 = percentTotalVotes1 + '%'
-  let percentTotalVotes2 = Math.round((totalVotes2 / totalVotes) * 100)
-  store.percentTotalVotes2 = percentTotalVotes2 + '%'
-  console.log(percentTotalVotes2)
+  //
+  // let arr = data.surveys
+  // for (let i = 0; i < arr.length; i++) {
+  //   let arrOneCount = arr[i].one.count
+  //   let arrId = arr[i]._id
+  //   store.arrOneCount = arrOneCount
+  //   store.arrId = arrId
+  //   console.log('++++++++++')
+  //   console.log(arrOneCount, arrId)
+  //   console.log('++++++++++')
+  // }
+  // for (let i = 0; i < arr.length; i++) {
+  //   let arrTwoCount = arr[i].two.count
+  //   let arrId = arr[i]._id
+  //   store.arrTwoCount = arrTwoCount
+  //   store.arrId = arrId
+  //   console.log(arrTwoCount, arrId)
+  // }
+  // console.log(data.surveys[1].one.count)
+  //
+  // let totalVotes1 = data.surveys[0].one.count
+  // let totalVotes2 = data.surveys[0].two.count
+  // console.log(totalVotes1)
+  // console.log(totalVotes2)
+  // let totalVotes = totalVotes1 + totalVotes2
+  // console.log(totalVotes)
+  // let percentTotalVotes1 = Math.round((totalVotes1 / totalVotes) * 100)
+  // console.log(percentTotalVotes1)
+  // store.percentTotalVotes1 = percentTotalVotes1 + '%'
+  // let percentTotalVotes2 = Math.round((totalVotes2 / totalVotes) * 100)
+  // store.percentTotalVotes2 = percentTotalVotes2 + '%'
+  // console.log(percentTotalVotes2)
 
   store.surveys = data.surveys
-  chartUpdate(store.surveys)
+  // chartUpdate(store.surveys)
 
 
   // $(".progress-bar").css("width", i + "%").text(i + " %");

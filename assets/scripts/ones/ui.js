@@ -3,6 +3,7 @@ const two = require('../twos/events.js')
 const api = require('./api.js')
 const Chart = require('chart.js')
 const chartUpdate = require('../lib/chart')
+const surveyChart = require('../lib/chart')
 // const surveyEvents = require('../surveys/events.js')
 
 const onCreateOneSuccess = (response) => {
@@ -25,9 +26,9 @@ const onVotedSuccess = (response) => {
     .catch()
 }
 const votedCount = (response) => {
-  console.log('response for votedCount', response)
+  // console.log('response for votedCount', response)
   // store.voteOneCount = response.one.count
-  console.log('store voteOneCount', store.voteOneCount)
+  // console.log('store voteOneCount', store.voteOneCount)
   let idOne = response.one._id
   // $('#see-all-survey-content').click(function () {
   //   chart.data.data[0] = store.voteOneCount
@@ -37,10 +38,26 @@ const votedCount = (response) => {
     return survey.one._id === idOne
   })
 
-  survey.one.count = response.one.count
-  console.log(survey)
-  console.log('+++++++')
 
+  survey.one.count = response.one.count
+  console.log('survey 1: ', survey)
+  console.log('survey.one.count in ones.ui: ', survey.one.count)
+  console.log('+++++++')
+  // if (myChart) {
+  //   myChart.destroy()
+  // }
+  // if (surveyChart) {
+  //   surveyChart.destroy()
+  // }
+  if (window.surveyChart !== undefined || window.surveyChart !== null) {
+    console.log('hi')
+    // window.surveyChart.destroy()
+  }
+
+  // $('#chart-wrapper').empty()
+//   document.getElementById("chart-wrapper").innerHTML = '&nbsp;'
+// document.getElementById("chart-wrapper").innerHTML = '<canvas id="bar-chart bar-chart-{{survey.one.title}}" width="100%" height="30px"></canvas>'
+// let chartUpdate = document.getElementById("bar-chart").getContext("2d")
   chartUpdate(store.surveys)
 }
 // const updateChart1 = (Chart) => {
